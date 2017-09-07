@@ -1,0 +1,8 @@
+require('./bootstrap');
+
+import $name from './components/$name'
+
+new Vue({
+    el: '#app',
+    components: { $name }
+})

@@ -1,4 +1,3 @@
-
 require('./bootstrap');
 
 // 匯入 Hello.vue 檔，不需加副檔名

@@ -1,5 +1,7 @@
 <?php
 
+Auth::routes();
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +13,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/hello', function () {
     return view('hello');
 });
+
+Route::get('/', 'PostsController@index');
+
+Route::post('favorite/{post}', 'PostsController@favoritePost');
+Route::post('unfavorite/{post}', 'PostsController@unFavoritePost');
+
+Route::get('my_favorites', 'UsersController@myFavorites')->middleware('auth');
